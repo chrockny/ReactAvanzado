@@ -1,17 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {ListOfCategories} from './components/ListOfCategories/index';
+import {GlobalStyle} from './styles/GlobalStyles';
+import {ListOfPhotoCards} from './components/ListOfPhotoCards/index';
+import Logo from './components/Logo/index';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Aprendiendo con Rockny  
-        </p>
-      </header>
-    </div>
+    <React.Fragment>
+    <GlobalStyle/>
+    <Logo/>
+    <ListOfCategories/>
+    <ListOfPhotoCards/>
+    </React.Fragment>
   );
 }
 
