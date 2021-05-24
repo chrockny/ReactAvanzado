@@ -5,7 +5,7 @@ import {List, Item} from './styles';
 function useCategoriesData(){
     const [categories,setCategories] = useState([]);
     const [loading,setLoading] = useState(true);
-    useEffect(function(){
+    useEffect(()=>{
         window.fetch('https://petgram-chrockny.vercel.app/categories')
         .then(res => res.json())
         .then(response =>{
@@ -28,13 +28,12 @@ export const ListOfCategories = () =>{
         }
         document.addEventListener('scroll',onScroll);
 
-        return()=>document.removeEventListener('scroll',onScroll);
+        return document.removeEventListener('scroll',onScroll);
     })
     
 
     const renderList = (fixed) =>(
-    <List fixed={fixed}>
-        
+    <List fixed={fixed}>  
         {
         loading ? 
         [1,2,3,4,5,6].map(categoryloading => <Item key={categoryloading.id}><Category {...categoryloading}/></Item>)
